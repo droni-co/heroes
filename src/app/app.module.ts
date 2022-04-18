@@ -18,7 +18,7 @@ import { HeroComponent } from './hero/hero.component';
     HeroComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
