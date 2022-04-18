@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="text-center py-3">
+    <a [routerLink]="['/']" class="btn btn-primary">Go back to the list</a>
+  </div>
+  <div class="row" *ngIf="hero; else elseBlock">
+    <div class="col-md-5">
+      <img [src]="hero.images.lg" class="img-responsive">
+    </div>
+    <div class="col-md-7">
+      <h1>{{ hero.name }}</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">Appearance</div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-grow-1">Gender</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.gender }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Race</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.race }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Height</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.height.join(" | ") }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Weight</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.weight.join(" | ") }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Hair Color</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.hairColor }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Eye Color</div>
+                <div class="flex-grow-0 text-end">{{ hero.appearance.eyeColor }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">Connections</div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-grow-1">Group Affiliation</div>
+                <div class="flex-grow-0 text-end">{{ hero.connections.groupAffiliation }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Relatives</div>
+                <div class="flex-grow-0 text-end">{{ hero.connections.relatives }}</div>
+              </div>
+            </div>
+          </div>        
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">Biography</div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-grow-1">FullName</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.fullName }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">AlterEgos</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.alterEgos }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Aliases</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.aliases.join(" | ") }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Place Of Birth</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.placeOfBirth }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">First Appearance</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.firstAppearance }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Publisher</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.publisher }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Alignment</div>
+                <div class="flex-grow-0 text-end">{{ hero.biography.alignment }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">Work</div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-grow-1">Occupation</div>
+                <div class="flex-grow-0 text-end">{{ hero.work.occupation }}</div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-grow-1">Base</div>
+                <div class="flex-grow-0 text-end">{{ hero.work.base }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="alert alert-warning text-center py-4" role="alert">
+      <h1>No hero found.</h1>
+    </div>
+  </ng-template>
+</div>
